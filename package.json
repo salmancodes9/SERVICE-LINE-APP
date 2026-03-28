@@ -1,17 +1,29 @@
 {
-  "name": "student-marketplace-backend",
+  "name": "student-marketplace",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "convex dev",
+    "dev": "next dev",
+    "dev:convex": "convex dev",
+    "dev:all": "concurrently -n convex,next -c blue,green \"convex dev\" \"next dev\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "codegen": "convex codegen",
-    "typecheck": "tsc --noEmit -p convex/tsconfig.json"
+    "typecheck": "tsc --noEmit && tsc --noEmit -p convex/tsconfig.json"
   },
   "dependencies": {
-    "convex": "^1.17.4"
+    "convex": "^1.17.4",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.7",
     "typescript": "^5.7.2"
   }
 }
